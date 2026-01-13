@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
 import './App.css'
+import waterWeight from './assets/Water-Weight.jpeg'
+import mixedSignals from './assets/Mixed-Signals.jpeg'
+import myMarigolds from './assets/My-Marigolds!.PNG'
+import spaceFest from './assets/Space-Fest.jpeg'
 const App = () => {
 useEffect(() => {
     // Fade out topnav when user scrolls past the hero
@@ -193,7 +197,7 @@ const FilmMedia = () => {
   return (
     <>
       <FilmCard
-      img="src\assets\Water-Weight.jpeg"
+      img={waterWeight}
       alt='Water Weight'
       heading='Water Weight'
       dir='Dir. Leah O’ Riordan'
@@ -202,7 +206,7 @@ const FilmMedia = () => {
       legend='Score Writer, Producer and Mixer'
       />
       <FilmCard
-      img="src\assets\Mixed-Signals.jpeg"
+      img={mixedSignals}
       alt='Mixed Signals'
       heading='Mixed Signals'
       dir='Dir. Meaghan Duffy'
@@ -211,7 +215,7 @@ const FilmMedia = () => {
       legend='Score Writer, Producer and Mixer'
       />
       <FilmCard
-      img="src\assets\My-Marigolds!.PNG"
+      img={myMarigolds}
       alt='My Marigolds!'
       heading='My Marigolds'
       imgClass='portrait-img'
@@ -221,7 +225,7 @@ const FilmMedia = () => {
       legend='Score Writer, Producer and Mixer'
       />
       <FilmCard
-      img="src\assets\Space-Fest.jpeg"
+      img={spaceFest}
       alt='Space Fest'
       heading='RTÉ Galaxy Fest Festive Special'
       dir='Dir. Aidan Fitzmaurice'
