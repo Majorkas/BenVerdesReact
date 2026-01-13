@@ -4,7 +4,7 @@ This project is a React conversion of a static HTML/CSS/JavaScript portfolio web
 
 ## Migration Overview
 
-The original website was built with vanilla HTML, CSS, and JavaScript. It has been converted to a modern React single-page application while maintaining all original functionality and styling.
+The [original website](https://github.com/Majorkas/BenVerdes) was built with vanilla HTML, CSS, and JavaScript. It has been converted to a modern React single-page application while maintaining all original functionality and styling.
 
 ### Key Changes in the Migration
 
