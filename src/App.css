@@ -9,7 +9,7 @@ body {
   color: white;
 }
 .title{
-  text-decoration: underline 2px black;
+  text-decoration: underline 2px white;
   text-align: center;
   font-family: 'Great Vibes', cursive;
   /* make section-level titles larger and responsive */
@@ -397,32 +397,13 @@ body {
     text-align: left;
   }
 }
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 8px;
-  align-items: center;
-  justify-content: center;
-}
 
-
-.column {
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 8px;
-}
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-}
 .heading{
   text-align: center;
   background-color: #005a00;
   border-radius: 25px;
   padding: 5px;
-  color: black;
+  color: white;
   width: 70%;
   margin: 0 auto;
   margin-top: 15px;
@@ -437,12 +418,6 @@ body {
   border-radius: 100%;
   border:#003200 2px solid;
   margin: 10px;
-}
-.odd{
-  border: black 5px solid;
-}
-.even{
-  border: white 5px solid;
 }
 
 /* Form styling */
@@ -624,14 +599,6 @@ textarea::placeholder {
   border-color: rgba(255,255,255,0.6);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.success-msg{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  margin: 100px;
 }
 
 /* Hero section using the main portrait as a background with a bottom gradient */
