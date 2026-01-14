@@ -175,19 +175,19 @@ const Studio = () => {
     <HeadingTwo heading="Studio" />
     <div className='studio-cards'>
     <StudioCard
-      heading='My Dear...'
+      heading='Jar EP'
       songID='https://open.spotify.com/embed/album/7HzwaHYOJ0RLk293lsVNle?utm_source=generator&theme=0'
-      desc='Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ut necessitatibus voluptates quidem maiores eaque. Iure nam itaque libero, doloribus voluptate distinctio corrupti? Sapiente aperiam ut rem iusto magni quaerat.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, veniam quisquam similique harum modi velit quidem eligendi unde dolore cupiditate optio dolores, expedita quam qui eveniet minus inventore tenetur veritatis.'
+      desc='Written, Produced, Engineered, Mixed and Mastered by Ben in his studio in Wicklow'
     />
       <StudioCard
       heading='Prospect'
       songID='https://open.spotify.com/embed/track/0DcWjXflMeyVYxZtqWIfj5?utm_source=generator&theme=0'
-      desc='Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ut necessitatibus voluptates quidem maiores eaque. Iure nam itaque libero, doloribus voluptate distinctio corrupti? Sapiente aperiam ut rem iusto magni quaerat.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, veniam quisquam similique harum modi velit quidem eligendi unde dolore cupiditate optio dolores, expedita quam qui eveniet minus inventore tenetur veritatis.'
+      desc='Produced and Engineered by Ben in his studio in Wicklow'
     />
     <StudioCard
       heading='Blarn'
       songID='https://open.spotify.com/embed/track/74SKmnEEk7KggPNKEyzC2t?utm_source=generator&theme=0'
-      desc='Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ut necessitatibus voluptates quidem maiores eaque. Iure nam itaque libero, doloribus voluptate distinctio corrupti? Sapiente aperiam ut rem iusto magni quaerat.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, veniam quisquam similique harum modi velit quidem eligendi unde dolore cupiditate optio dolores, expedita quam qui eveniet minus inventore tenetur veritatis.'
+      desc='Produced and Engineered by Ben in his studio in Wicklow.'
     />
       </div>
   </div>

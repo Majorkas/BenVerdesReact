@@ -2,7 +2,7 @@
   "name": "benverdes-react",
   "private": true,
   "version": "0.0.0",
-  "homepage": "www.benverdes.com",
+  "homepage": "http://www.benverdes.com",
   "type": "module",
   "scripts": {
     "dev": "vite",
