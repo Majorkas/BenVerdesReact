@@ -171,12 +171,12 @@ const HeadingTwo = (props) => {
 const Studio = () => {
   return (
 
-  <div className="studio-section">
+    <div className="studio-section">
     <HeadingTwo heading="Studio" />
     <div className='studio-cards'>
     <StudioCard
       heading='My Dear...'
-      songID='https://open.spotify.com/embed/track/2JUhCuCVQvEYKYm2g6z5TV?utm_source=generator&theme=0'
+      songID='https://open.spotify.com/embed/album/7HzwaHYOJ0RLk293lsVNle?utm_source=generator&theme=0'
       desc='Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ut necessitatibus voluptates quidem maiores eaque. Iure nam itaque libero, doloribus voluptate distinctio corrupti? Sapiente aperiam ut rem iusto magni quaerat.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, veniam quisquam similique harum modi velit quidem eligendi unde dolore cupiditate optio dolores, expedita quam qui eveniet minus inventore tenetur veritatis.'
     />
       <StudioCard
@@ -210,7 +210,7 @@ const FilmMedia = () => {
       alt='Mixed Signals'
       heading='Mixed Signals'
       dir='Dir. Meaghan Duffy'
-      dirLink=''
+      dirLink='https://www.imdb.com/name/nm14857315/'
       desc='The film follows Matt, a young man who has developed a crush on a young woman whom he has noticed at the bus stop , and the comedy of errors he goes through trying to speak to her. The film comments on prejudices and hidden disabilities, all while presenting it in a comical, touching manner.'
       legend='Score Writer, Producer and Mixer'
       />
@@ -278,9 +278,9 @@ const ContactForm = () => {
       <input type="hidden" name="_next" value="https://majorkas.github.io/BenVerdes/message.html"/>
       <input type="text" name="_honey" style={{display:'none'}}/>
       <input type="hidden" name="_captcha" value="false"/>
-	    <input id="name" type="text" placeholder="NAME" required/>
-		  <input id="email" type="text" placeholder="E-MAIL" required/>
-		  <textarea id="message" type="text" placeholder="MESSAGE" required></textarea>
+	    <input id="name" name='name' type="text" placeholder="NAME" required/>
+		  <input id="email" name='email' type="text" placeholder="E-MAIL" required/>
+		  <textarea id="message" name='message' type="text" placeholder="MESSAGE" required></textarea>
       <button id="submit" type="submit">SEND !</button>
     </form>
   </div>

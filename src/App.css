@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: "BBH Sans Hegarty",Arial, Helvetica, sans-serif;
   background-color: #003200;
-  color: black;
+  color: white;
 }
 .title{
   text-decoration: underline 2px black;
@@ -637,7 +637,7 @@ textarea::placeholder {
 /* Hero section using the main portrait as a background with a bottom gradient */
 .hero{
   position: relative;
-  background-image: url('./assets/DSC_3487.jpg');
+  background-image: url('./assets/Main-Picture.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
