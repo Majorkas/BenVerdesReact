@@ -1,12 +1,12 @@
-import { useState } from 'react'
 import { useEffect } from 'react'
 import './App.css'
 import waterWeight from './assets/Water-Weight.jpeg'
 import mixedSignals from './assets/Mixed-Signals.jpeg'
 import myMarigolds from './assets/My-Marigolds!.PNG'
 import spaceFest from './assets/Space-Fest.jpeg'
+
 const App = () => {
-useEffect(() => {
+  useEffect(() => {
     // Fade out topnav when user scrolls past the hero
     const nav = document.getElementById('myTopnav');
     const hero = document.querySelector('.hero');
@@ -25,9 +25,6 @@ useEffect(() => {
       }
     }
 
-    // Wait for full page load (images/fonts) before initial check so hero height is correct
-    window.addEventListener('load', updateNavFade);
-
     // Fade in the hero title after load for a smoother entrance
     const heroTitle = document.querySelector('.hero-title');
     const handleLoad = () => {
@@ -40,7 +37,16 @@ useEffect(() => {
       // micro delay to ensure paint and then animate
       requestAnimationFrame(() => setTimeout(() => heroTitle.classList.add('fade-in'), 80));
     };
+
+    // Wait for full page load (images/fonts) before initial check so hero height is correct
+    window.addEventListener('load', updateNavFade);
     window.addEventListener('load', handleLoad);
+
+    // In dev/HMR and very fast reloads, load may have already fired before listeners were added.
+    if (document.readyState === 'complete') {
+      updateNavFade();
+      handleLoad();
+    }
 
     // Fade out hero title as user scrolls down
     function updateHeroTitleFade() {
@@ -80,18 +86,19 @@ useEffect(() => {
     };
   }, []);
   return (
-  <>
-    <Nav />
-    <Hero />
-    <HeadingOne id="about" heading="About Me" />
-    <About />
-    <HeadingOne id="discograhy" heading="Discography" />
-    <Studio />
-    <FilmMedia />
-    <HeadingOne id='contact' heading='Contact Me' />
-    <ContactForm />
-
-  </>
+    <>
+      <Nav />
+      <Hero />
+      <main className="page-shell">
+        <HeadingOne id="about" heading="About Me" />
+        <About />
+        <HeadingOne id="discography" heading="Discography" />
+        <Studio />
+        <FilmMedia />
+        <HeadingOne id='contact' heading='Contact Me' />
+        <ContactForm />
+      </main>
+    </>
   )
 }
 
@@ -123,7 +130,9 @@ const Nav = () => {
       </div>
         <button className="icon" onClick={navBar} aria-label="Toggle navigation menu">
         <span className="hidden">menu button</span>
-          <i className="fa fa-bars"></i>
+        <span className="burger-line"></span>
+        <span className="burger-line"></span>
+        <span className="burger-line"></span>
       </button>
 
     </div>
@@ -137,21 +146,25 @@ const Hero = () => {
     <>
     <span id="home"></span>
     <section className="hero" aria-hidden="false">
-    <div className="hero-title">Ben Verdes</div>
+      <div className="hero-overlay"></div>
+      <div className="hero-title-wrap">
+        <div className="hero-title">Ben Verdes</div>
+        <p className="hero-subtitle">Songwriter, Film Composer, Music Producer</p>
+      </div>
       </section>
     </>
   )
 }
 const About = () => {
   return (
-    <div className="about">
+    <section className="about" aria-label="About Ben Verdes">
     <p>
 
         Ben Verdes is a songwriter, film composer and music producer from Wicklow, Ireland. He has worked on award nominated and and award winning short-films. He is currently studying for a BA (Hons) in Creative Music Production at Dun Laoghaire, Institute of Art, Design and Technology (IADT).
 
     </p>
 
-  </div>
+  </section>
   )
 }
 
@@ -171,7 +184,7 @@ const HeadingTwo = (props) => {
 const Studio = () => {
   return (
 
-    <div className="studio-section">
+    <section className="studio-section" aria-label="Studio productions">
     <HeadingTwo heading="Studio" />
     <div className='studio-cards'>
     <StudioCard
@@ -190,7 +203,7 @@ const Studio = () => {
       desc='Produced and Engineered by Ben in his studio in Wicklow.'
     />
       </div>
-  </div>
+  </section>
   )
 }
 const FilmMedia = () => {
@@ -241,32 +254,32 @@ const FilmMedia = () => {
 
 const StudioCard = (props) => {
   return (
-    <div className="spotify">
+    <article className="spotify">
 
-      <iframe title="spotify link" className="spotify-song" data-testid="embed-iframe" src={props.songID}  height="210"  allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe title={`${props.heading} spotify link`} className="spotify-song" data-testid="embed-iframe" src={props.songID}  height="210"  allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
         <div className="song-text">
         <HeadingTwo heading={props.heading} />
         <p className="song-desc">{props.desc}</p>
 
       </div>
-    </div>
+    </article>
   )
 
 }
 const FilmCard = (props) => {
 return (
-  <div className="spotify">
+  <article className="spotify">
 
     <img src={props.img} alt={props.alt} className={props.imgClass} />
 
         <div className="song-text">
         <HeadingTwo heading={props.heading}/>
-      <a target='_blank' href={props.dirLink} className="director">{props.dir}</a>
+      <a target='_blank' rel="noopener noreferrer" href={props.dirLink} className="director">{props.dir}</a>
         <p className="song-desc">{props.desc}</p>
       <span className="card-legend">My Contributions: <br />{props.legend}</span>
       </div>
-  </div>
+  </article>
 )
 }
 const ContactForm = () => {
@@ -279,7 +292,7 @@ const ContactForm = () => {
       <input type="text" name="_honey" style={{display:'none'}}/>
       <input type="hidden" name="_captcha" value="false"/>
 	    <input id="name" name='name' type="text" placeholder="NAME" required/>
-		  <input id="email" name='email' type="text" placeholder="E-MAIL" required/>
+		  <input id="email" name='email' type="email" placeholder="E-MAIL" required/>
 		  <textarea id="message" name='message' type="text" placeholder="MESSAGE" required></textarea>
       <button id="submit" type="submit">SEND !</button>
     </form>
