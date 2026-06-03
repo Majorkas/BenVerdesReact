@@ -326,7 +326,16 @@ const SiteFooter = () => {
         <p className="copyright">© {currentYear} Ben Verdes. All rights reserved.</p>
         <p className="legal-line">This website and all original content are protected by copyright and related intellectual property laws.</p>
         <p className="footer-links">
-          <a href="/?legal=1">Legal, Privacy & Cookie Policy</a>
+          <a className="legal-link" href="/?legal=1">Legal, Privacy & Cookie Policy</a>
+          <span className="footer-separator" aria-hidden="true">-</span>
+          <a
+            className="site-credit-link"
+            href="https://www.linkedin.com/in/aaron-richards-b732ba366/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Site created by Aaron Richards
+          </a>
         </p>
       </div>
     </footer>

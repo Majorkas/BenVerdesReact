@@ -380,13 +380,29 @@ body::before {
 }
 
 .footer-links {
-  margin: 0.7rem 0 0;
+  margin: 0.55rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.74rem;
 }
 
-.footer-links a {
-  color: #b9ffaf;
+.legal-link,
+.site-credit-link {
+  color: rgba(219, 245, 213, 0.66);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.legal-link:hover,
+.site-credit-link:hover {
+  color: rgba(219, 245, 213, 0.86);
   text-decoration: underline;
-  font-weight: 600;
+}
+
+.footer-separator {
+  color: rgba(219, 245, 213, 0.4);
 }
 
 .cookie-banner {
