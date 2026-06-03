@@ -1,12 +1,18 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import waterWeight from './assets/Water-Weight.jpeg'
 import mixedSignals from './assets/Mixed-Signals.jpeg'
 import myMarigolds from './assets/My-Marigolds!.PNG'
 import spaceFest from './assets/Space-Fest.jpeg'
 
+const COOKIE_CONSENT_KEY = 'benverdes_cookie_consent'
+
 const App = () => {
+  const isLegalPage = new URLSearchParams(window.location.search).get('legal') === '1';
+
   useEffect(() => {
+    if (isLegalPage) return;
+
     // Fade out topnav when user scrolls past the hero
     const nav = document.getElementById('myTopnav');
     const hero = document.querySelector('.hero');
@@ -84,7 +90,12 @@ const App = () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', updateNavFade);
     };
-  }, []);
+  }, [isLegalPage]);
+
+  if (isLegalPage) {
+    return <LegalPage />;
+  }
+
   return (
     <>
       <Nav />
@@ -98,6 +109,8 @@ const App = () => {
         <HeadingOne id='contact' heading='Contact Me' />
         <ContactForm />
       </main>
+      <SiteFooter />
+      <CookieConsent />
     </>
   )
 }
@@ -303,6 +316,105 @@ const ContactForm = () => {
 
 
  }
+
+const SiteFooter = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="site-footer" aria-label="Legal and copyright information">
+      <div className="footer-inner">
+        <p className="copyright">© {currentYear} Ben Verdes. All rights reserved.</p>
+        <p className="legal-line">This website and all original content are protected by copyright and related intellectual property laws.</p>
+        <p className="footer-links">
+          <a href="/?legal=1">Legal, Privacy & Cookie Policy</a>
+        </p>
+      </div>
+    </footer>
+  );
+}
+
+const CookieConsent = () => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const storedConsent = window.localStorage.getItem(COOKIE_CONSENT_KEY);
+    if (!storedConsent) {
+      setVisible(true);
+    }
+  }, []);
+
+  const setConsent = (value) => {
+    window.localStorage.setItem(COOKIE_CONSENT_KEY, value);
+    setVisible(false);
+  };
+
+  if (!visible) return null;
+
+  return (
+    <aside className="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent prompt">
+      <p>
+        We use essential cookies to remember your preferences. By clicking Accept, you consent to this use.
+        <a href="/?legal=1#cookie-notice"> Read cookie notice</a>.
+      </p>
+      <div className="cookie-actions">
+        <button type="button" className="cookie-btn cookie-btn-secondary" onClick={() => setConsent('necessary-only')}>
+          Necessary Only
+        </button>
+        <button type="button" className="cookie-btn cookie-btn-primary" onClick={() => setConsent('accepted')}>
+          Accept
+        </button>
+      </div>
+    </aside>
+  );
+}
+
+const LegalPage = () => {
+  return (
+    <main className="legal-shell" aria-label="Legal page">
+      <header className="legal-header">
+        <p className="eyebrow">Ben Verdes</p>
+        <h1>Legal, Privacy and Cookie Policy</h1>
+        <p>
+          This page explains how this website handles copyright, terms of use, privacy,
+          and cookie consent.
+        </p>
+        <p><a href="/">Back to homepage</a></p>
+      </header>
+
+      <section className="legal-section" id="copyright-notice">
+        <h2>Copyright Notice</h2>
+        <p>
+          Unless otherwise stated, all content on this website, including text, branding,
+          and original media, is copyright Ben Verdes. All rights reserved.
+        </p>
+      </section>
+
+      <section className="legal-section" id="privacy-notice">
+        <h2>Privacy Notice</h2>
+        <p>
+          If you submit the contact form, your name, email address, and message are used
+          only to respond to your enquiry. Information is not sold to third parties.
+        </p>
+      </section>
+
+      <section className="legal-section" id="cookie-notice">
+        <h2>Cookie Notice</h2>
+        <p>
+          This site uses essential cookies/local storage to remember your cookie consent
+          choice and maintain a consistent browsing experience.
+        </p>
+      </section>
+
+      <section className="legal-section" id="terms-of-use">
+        <h2>Terms of Use</h2>
+        <p>
+          By using this website, you agree not to copy, reproduce, or distribute website
+          materials without prior written permission from the rights holder.
+        </p>
+      </section>
+    </main>
+  );
+}
 
 
 

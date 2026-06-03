@@ -24,31 +24,20 @@ html {
 body {
   margin: 0;
   color: var(--text-main);
-  background: radial-gradient(circle at 15% 10%, rgba(18, 116, 22, 0.4), transparent 34%),
-    radial-gradient(circle at 80% 15%, rgba(0, 50, 0, 0.7), transparent 42%),
-    linear-gradient(130deg, #022303 0%, #003200 36%, #033c0a 100%);
+  background: linear-gradient(180deg, #012b02 0%, #023603 100%);
   font-family: 'Manrope', Arial, sans-serif;
   line-height: 1.6;
   min-height: 100vh;
 }
 
 body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 36px 36px;
-  mix-blend-mode: soft-light;
-  opacity: 0.2;
-  z-index: -1;
+  content: none;
 }
 
 .page-shell {
   width: min(1160px, 92vw);
   margin: 0 auto;
-  padding: 2.4rem 0 3.5rem;
+  padding: 2rem 0 3rem;
 }
 
 .hero {
@@ -73,7 +62,6 @@ body::before {
   height: min(30vh, 15rem);
   background:
     linear-gradient(to bottom, rgba(0, 30, 0, 0) 0%, rgba(0, 68, 0, 0.36) 34%, rgba(0, 58, 0, 0.78) 62%, rgba(0, 50, 0, 0.96) 100%);
-  filter: blur(0.4px);
   pointer-events: none;
 }
 
@@ -111,7 +99,7 @@ body::before {
 
 .hero-title {
   font-family: 'Great Vibes', 'Cormorant Garamond', serif;
-  font-size: clamp(3.4rem, 10vw, 7.4rem);
+  font-size: clamp(3rem, 9vw, 6.8rem);
   letter-spacing: 0.01em;
   font-weight: 500;
   text-transform: none;
@@ -129,9 +117,9 @@ body::before {
 .hero-subtitle {
   margin: 0;
   color: var(--text-muted);
-  letter-spacing: 0.2em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  font-size: clamp(0.72rem, 1.45vw, 1rem);
+  font-size: clamp(0.72rem, 1.1vw, 0.9rem);
 }
 
 @keyframes hero-enter {
@@ -142,14 +130,14 @@ body::before {
 }
 
 .heading {
-  margin: 2.4rem auto 1.1rem;
+  margin: 2rem auto 1rem;
   width: fit-content;
-  padding: 0.45rem 1.3rem;
+  padding: 0.42rem 1.1rem;
   border: 1px solid var(--card-border);
   border-radius: 999px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(0.92rem, 1.45vw, 1.06rem);
   background: rgba(0, 50, 0, 0.6);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06), 0 8px 18px rgba(0, 0, 0, 0.2);
 }
@@ -158,27 +146,26 @@ body::before {
 .studio-section,
 .spotify,
 .form-div {
-  background: linear-gradient(150deg, rgba(10, 92, 16, 0.82), rgba(0, 50, 0, 0.88));
-  border: 1px solid var(--card-border);
-  border-radius: 24px;
-  box-shadow: var(--card-shadow);
-  backdrop-filter: blur(7px);
+  background: #0a4a0f;
+  border: 1px solid rgba(194, 255, 185, 0.18);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 .page-shell > .about:first-of-type {
-  background: linear-gradient(160deg, rgba(24, 106, 24, 0.64), rgba(0, 58, 0, 0.84));
+  background: #0d5413;
 }
 
 .about,
 .studio-section,
 .form-div {
-  padding: clamp(1.1rem, 3vw, 2rem);
+  padding: clamp(1rem, 2.5vw, 1.45rem);
   margin: 0.8rem 0;
 }
 
 .about p {
   margin: 0;
-  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  font-size: clamp(0.98rem, 1.05vw, 1.04rem);
   color: rgba(248, 255, 246, 0.95);
 }
 
@@ -186,9 +173,9 @@ body::before {
   margin: 0;
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.9rem, 4.2vw, 3.2rem);
+  font-size: clamp(1.65rem, 3.2vw, 2.4rem);
   line-height: 1.1;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   text-wrap: balance;
 }
 
@@ -217,28 +204,24 @@ body::before {
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
-  gap: clamp(0.9rem, 2vw, 1.3rem);
+  gap: clamp(0.85rem, 1.8vw, 1.1rem);
   margin: 0.8rem 0;
-  padding: clamp(0.95rem, 2vw, 1.2rem);
+  padding: 0.95rem;
   position: relative;
   overflow: clip;
 }
 
 .spotify::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top right, rgba(140, 255, 135, 0.06), transparent 44%);
-  pointer-events: none;
+  content: none;
 }
 
 .spotify-song,
 .spotify img {
   width: min(100%, 430px);
   flex: 1 1 380px;
-  border-radius: 16px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   background: var(--green-900);
 }
 
@@ -261,18 +244,18 @@ body::before {
   position: relative;
   flex: 1 1 320px;
   min-height: 235px;
-  padding: 0.9rem 1rem 2.8rem;
-  border-radius: 16px;
-  background: rgba(0, 50, 0, 0.78);
-  border: 1px solid rgba(208, 255, 201, 0.16);
+  padding: 1rem 1rem 2.2rem;
+  border-radius: 10px;
+  background: #074007;
+  border: 1px solid rgba(208, 255, 201, 0.14);
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 
 .song-text .title {
-  font-size: clamp(1.7rem, 3.3vw, 2.5rem);
-  margin-bottom: 0.2rem;
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
+  margin-bottom: 0.3rem;
 }
 
 .director {
@@ -286,15 +269,15 @@ body::before {
 .song-desc {
   margin: 0;
   text-align: left;
-  font-size: 0.94rem;
+  font-size: 0.9rem;
   color: rgba(248, 255, 246, 0.93);
 }
 
 .card-legend {
   position: absolute;
   right: 1rem;
-  bottom: 0.95rem;
-  font-size: 0.74rem;
+  bottom: 0.8rem;
+  font-size: 0.7rem;
   line-height: 1.35;
   text-align: right;
   color: rgba(229, 255, 223, 0.78);
@@ -309,10 +292,9 @@ body::before {
   z-index: 9999;
   width: min(96vw, 1100px);
   margin: 0 auto;
-  border-radius: 999px;
+  border-radius: 10px;
   border: 1px solid rgba(189, 255, 179, 0.22);
-  background: rgba(0, 50, 0, 0.66);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 45, 0, 0.94);
   opacity: 0;
   transform: translateY(-8px);
   pointer-events: none;
@@ -329,11 +311,11 @@ body::before {
 .topnav a {
   color: var(--text-main);
   text-decoration: none;
-  padding: 0.62rem 1.05rem;
+  padding: 0.52rem 0.9rem;
   border-radius: 999px;
-  font-size: 0.92rem;
+  font-size: 0.86rem;
   font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   transition: background-color 220ms ease, transform 220ms ease;
 }
 
@@ -370,6 +352,142 @@ body::before {
 
 .form-div {
   margin-top: 0.9rem;
+}
+
+.site-footer {
+  margin: 1.5rem auto 2rem;
+  width: min(1160px, 92vw);
+  background: #073a0a;
+  border: 1px solid rgba(185, 255, 175, 0.24);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.footer-inner {
+  padding: clamp(0.95rem, 2.2vw, 1.35rem);
+}
+
+.copyright {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.legal-line {
+  margin: 0.5rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.footer-links {
+  margin: 0.7rem 0 0;
+}
+
+.footer-links a {
+  color: #b9ffaf;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.cookie-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 12000;
+  max-width: 740px;
+  margin: 0 auto;
+  background: #043204;
+  border: 1px solid rgba(193, 255, 184, 0.32);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 0.9rem 1rem;
+}
+
+.cookie-banner p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: rgba(244, 255, 240, 0.95);
+}
+
+.cookie-banner a {
+  color: #b9ffaf;
+  text-decoration: underline;
+}
+
+.cookie-actions {
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.55rem;
+}
+
+.cookie-btn {
+  border-radius: 10px;
+  border: 1px solid rgba(194, 255, 184, 0.26);
+  padding: 0.5rem 0.8rem;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.cookie-btn-secondary {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cookie-btn-primary {
+  color: #053200;
+  font-weight: 700;
+  background: #8ee17d;
+  border-color: transparent;
+}
+
+.legal-shell {
+  width: min(980px, 92vw);
+  margin: 2rem auto 3rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.legal-header,
+.legal-section {
+  background: #0a4a0f;
+  border: 1px solid rgba(192, 255, 182, 0.24);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  padding: 1rem 1.05rem;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+.legal-shell h1,
+.legal-shell h2 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.legal-shell h1 {
+  margin-top: 0.35rem;
+}
+
+.legal-shell h2 {
+  margin-bottom: 0.45rem;
+  font-size: 1.1rem;
+}
+
+.legal-shell p {
+  margin: 0.5rem 0 0;
+}
+
+.legal-shell a {
+  color: #b9ffaf;
 }
 
 #form {
@@ -435,7 +553,7 @@ body::before {
   }
 
   .heading {
-    margin-top: 2rem;
+    margin-top: 1.6rem;
   }
 
   .song-text {
@@ -456,7 +574,7 @@ body::before {
   .topnav {
     width: calc(100vw - 1.1rem);
     top: 0.55rem;
-    border-radius: 14px;
+    border-radius: 10px;
   }
 
   .nav-links {
@@ -472,6 +590,15 @@ body::before {
   .topnav a {
     white-space: nowrap;
   }
+
+  .site-footer {
+    width: min(1220px, 95vw);
+  }
+
+  .legal-shell {
+    width: min(980px, 95vw);
+    margin: 1rem auto 2rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -481,7 +608,7 @@ body::before {
   }
 
   .hero-subtitle {
-    letter-spacing: 0.12em;
+    letter-spacing: 0.06em;
   }
 
   .topnav {
@@ -516,7 +643,7 @@ body::before {
     width: 100vw !important;
     height: 100vh !important;
     border-radius: 0 !important;
-    background: linear-gradient(170deg, rgba(0, 50, 0, 0.98), rgba(0, 30, 0, 0.98)) !important;
+    background: #033003 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -546,13 +673,22 @@ body::before {
     font-size: 1.1rem;
     padding: 0.78rem 1rem;
     border: 1px solid rgba(201, 255, 192, 0.24);
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
   }
 
   .spotify-song,
   .spotify img {
     min-height: 200px;
     flex-basis: 100%;
+  }
+
+  .cookie-actions {
+    justify-content: stretch;
+    flex-direction: column;
+  }
+
+  .cookie-btn {
+    width: 100%;
   }
 }
 
